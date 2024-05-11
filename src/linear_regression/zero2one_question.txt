@@ -1,0 +1,11 @@
+线性回归中，用于生成人造数据集的函数如下所示：
+```python
+    def synthetic_data(w, b, num_examples):
+        X = torch.normal(0, 1, (num_examples, len(w)))
+        y = torch.matmul(X, w) + b
+        y += torch.normal(0, 0.01, y.shape)
+
+        return X, y.reshape((-1, 1))
+```python
+
+其中 `X = torch.normal(0, 1, (num_examples, len(w)))` 的作用是什么
